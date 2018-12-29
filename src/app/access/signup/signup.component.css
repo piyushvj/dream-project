@@ -1,0 +1,15 @@
+div {
+    align-items: flex-start;
+    text-align: center;
+}
+
+input {
+    align-self: flex-start; 
+    text-align: left;   
+}
+
+.field-error {
+    color: red;
+    font-style: italic;
+    font: small;
+}

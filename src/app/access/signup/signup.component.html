@@ -1,0 +1,112 @@
+<div>
+  <form [formGroup]="signupForm">
+
+    <br>
+
+    <!--First name starts, error message is managed in error-message.ts-->
+    <div>
+      First Name
+      <input formControlName="firstName" placeholder="First Name">
+      <br>
+      <label *ngIf="!signupForm.get('firstName').valid && signupForm.get('firstName').touched  signupForm.get('firstName').invalid" [ngClass]="'error field-error'"  >{{signup_errmsg.firstName}}</label>
+      <br>
+    </div>
+    <!--First name ends-->
+
+    <!--Last name starts, error message is managed in error-message.ts-->
+    Last Name
+    <input formControlName="lastName" placeholder="Last Name">
+    <br>
+    <label *ngIf="signupForm.get('lastName').invalid" [ngClass]="'error field-error'">{{signup_errmsg.lastName}}</label>
+    <br>
+    <!--Last name ends-->
+
+
+    <!--Second name starts, error message is managed in error-message.ts-->
+    Mother's Full Name
+    <input formControlName="motherFullName" placeholder="Mother Full Name">
+    <br>
+    <label *ngIf="signupForm.get('motherFullName').invalid" [ngClass]="'error field-error'">{{signup_errmsg.motherFullName}}</label>
+    <br>
+    <!--Second name ends-->
+
+    <!--DOB starts, error message is managed in error-message.ts-->
+    Date Of Birth
+    <input formControlName="dob" placeholder="Date Of Birth (MM/DD/YYYY)">
+    <br>
+    <label *ngIf="signupForm.get('dob').invalid" [ngClass]="'error field-error'">{{signup_errmsg.dob}}</label>
+    <br>
+    <!--DOB ends-->
+
+    <!--Nationality starts, error message is managed in error-message.ts-->
+    Nationality
+    <select formControlName="nationality">
+      <option *ngFor="let nation of nations" [ngValue]="nation.name">
+        {{ nation.name }}
+      </option>
+    </select>
+    <br>
+    <label *ngIf="signupForm.get('nationality').invalid" [ngClass]="'error field-error'">{{signup_errmsg.nationality}}</label>
+    <br>
+    <!--Nationality ends-->
+
+    <!--Gender starts, error message is managed in error-message.ts-->
+    Gender
+    <input type="radio" formControlName="gender" value="Male"> Male
+    <input type="radio" formControlName="gender" value="Female"> Female
+    <br>
+    <br>
+    <!--Gender ends-->
+
+    <!--Email address starts, error message is managed in error-message.ts-->
+    Email Address
+    <input formControlName="email" placeholder="Email Address">
+    <br>
+    <label *ngIf="signupForm.get('email').invalid" [ngClass]="'error field-error'">{{signup_errmsg.email}}</label>
+    <br>
+    <!--Email address ends-->
+
+    <!--Password starts, error message is managed in error-message.ts-->
+    Password
+    <input type="password" formControlName="password" placeholder="Password">
+    <br>
+    <label *ngIf="signupForm.get('password').invalid" [ngClass]="'error field-error'">{{signup_errmsg.password}}</label>
+    <br>
+    <!--Password ends, error message is managed in error-message.ts-->
+
+    <!--Confirm password starts, error message is managed in error-message.ts-->
+    Confirm Password
+    <input type="password" formControlName="confirmPassword" placeholder="Confirm Password">
+    <br>
+    <label *ngIf="signupForm.get('confirmPassword').invalid" [ngClass]="'error field-error'">{{signup_errmsg.confirmPassword}}</label>
+    <br>
+    <!--Confirm password ends-->
+
+    <!--Mobile starts, error message is managed in error-message.ts-->
+    Mobile Number
+    <input formControlName="mobile" placeholder="Mobile Number">
+    <br>
+    <label *ngIf="signupForm.get('mobile').invalid" [ngClass]="'error field-error'">{{signup_errmsg.mobile}}</label>
+    <br>
+    <!--Mobile ends-->
+
+    <!--Captcha starts, error message is managed in error-message.ts-->
+    Captcha
+    <input formControlName="captcha" placeholder="captcha">
+    <br>
+    <label *ngIf="signupForm.get('captcha').invalid" [ngClass]="'error field-error'">{{signup_errmsg.captcha}}</label>
+    <br>
+    <!--Captcha ends-->
+
+    <!--I agree starts, error message is managed in error-message.ts-->
+    <input type="checkbox" formControlName="agree"> I agree Terms&Condition
+    <br>
+    <label *ngIf="signupForm.get('agree').invalid" [ngClass]="'error field-error'">{{signup_errmsg.agree}}</label>
+    <br>
+    <!--I agree ends-->
+
+    <!--Create Account Button starts-->
+    <button type="button" (click)="onFormSubmit()">Creat Account</button>
+    <!--Create Account Button ends-->
+  </form>
+</div>
